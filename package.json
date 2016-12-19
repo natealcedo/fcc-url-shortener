@@ -1,0 +1,17 @@
+{
+  "name": "url-microservice",
+  "version": "1.0.0",
+  "description": "Microservice for shortening url",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "nathaniel d. alcedo jr",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
