@@ -11,7 +11,7 @@ mongo.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017
 	console.log('connected to mongodb');
 
 	app.set('view engine', 'pug');
-	app.set('views', './');
+	app.set('views', './views');
 
 	db.createCollection('websites', {
 		capped: true,
