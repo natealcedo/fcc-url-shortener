@@ -20,7 +20,7 @@ mongo.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017
 	});
 
 	app.get('/', (req, res) => {
-		res.render('index');
+		res.render('index.pug');
 	});
 
 	api(app,db);
@@ -29,7 +29,7 @@ mongo.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017
 	let port = process.env.PORT || 8080;
 	app.listen(port, () => {
 
-		console.log('server started on port 8080');
+		console.log('server started on', port);
 
 	});
 
