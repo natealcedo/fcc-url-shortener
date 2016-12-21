@@ -22,7 +22,7 @@ module.exports = function (app, db) {
 		if (validateURL(url)) {
 			urlObj = {
 				'original_url': url,
-				'short_url': `${process.env.APP_URL}\${linkGen()}`
+				'short_url': process.env.APP_URL +'/'+ linkGen()
 			};
 			res.send(urlObj);
 			save(urlObj, db);
