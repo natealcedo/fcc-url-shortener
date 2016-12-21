@@ -21,14 +21,14 @@ module.exports = function (app, db) {
 		var urlObj = {};
 		if (validateURL(url)) {
 			urlObj = {
-				'original_url': url,
-				'short_url': process.env.APP_URL +'/'+ linkGen()
+				"original_url": url,
+				"short_url": process.env.APP_URL + linkGen()
 			};
 			res.send(urlObj);
 			save(urlObj, db);
 		} else {
 			urlObj = {
-				'error': 'Wrong url format, make sure you have a valid protocol and real site.'
+				"error": "Wrong url format, make sure you have a valid protocol and real site."
 			};
 			res.send(urlObj);
 		}
@@ -54,7 +54,7 @@ module.exports = function (app, db) {
 		var sites = db.collection('sites');
 		// get the url
 		sites.findOne({
-			'short_url': link
+			"short_url": link
 		}, function (err, result) {
 			if (err) throw err;
 			// object of the url
@@ -66,7 +66,7 @@ module.exports = function (app, db) {
 			} else {
 				// we don't
 				res.send({
-					'error': 'This url is not on the database.'
+					"error": "This url is not on the database."
 				});
 			}
 		});
