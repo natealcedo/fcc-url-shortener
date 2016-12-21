@@ -6,7 +6,7 @@ const app = express();
 const mongo = require('mongodb');
 const api = require('./routes/api.js');
 
-mongo.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/url-shortener', (err, db) => {
+mongo.MongoClient.connect(process.env.MONGOLAB_URI, (err, db) => {
 	if (err) throw err;
 	console.log('connected to mongodb');
 
