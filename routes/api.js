@@ -2,9 +2,8 @@
 'use strict';
 module.exports = function (app, db) {
 
-	app.route('/:url')
-		// Check and retrieve url to redirect if it exist.
-		.get(handleGet);
+	// Check and retrieve url to redirect if it exist.
+	app.route('/:url').get(handleGet);
 
 	app.get('/api/:url*', handlePost);
 
